@@ -10,10 +10,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/highcharts-chart/highcharts-chart.html">
+<link rel="import" href="/bower_components/firebase-element/firebase.html">
+<link rel="import" href="/bower_components/firebase-element/firebase-collection.html">
 <dom-module id="my-view1">
 
   <template>
-
+    <firebase-collection
+    order-by-child="timestamp"
+    limit-to-last="15"
+    location="https://project-1570032092864356412.firebaseio.com/edgaralejod/tds"
+    data="{{tds}}">
+    </firebase-collection>
     <style>
       :host {
         display: block;
@@ -47,6 +54,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <div class="card">
       <h1>System Summary</h1>
+      <template is="dom-repeat" items="[[tds]]" as="tds">
+        tds1 <span>[[tds.tds1]], </span>
+        tds2 <span>[[tds.tds2]]</span>
+      </template>
     </div>
     <div class="card">
       <highcharts-chart 
