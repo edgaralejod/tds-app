@@ -1,3 +1,4 @@
+
 {
   "name": "My App",
   "short_name": "My App",
@@ -24,6 +25,6 @@
     }],
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#3f51b5",
-  "theme_color": "#3f51b5"
+  "background_color": "#3f51bf",
+  "theme_color": "#3f5ab5"
 }
