@@ -18,7 +18,9 @@
     "polymer": "polymer/polymer#^1.4.0",
     "highcharts-chart": "^1.1.4",
     "firebase-element": "GoogleWebComponents/firebase-element#^1.0.15",
-    "google-chart": "GoogleWebComponents/google-chart#^1.0.6"
+    "google-chart": "GoogleWebComponents/google-chart#^1.0.6",
+    "iron-input": "^1.0.10",
+    "polymerfire": "^0.9.4"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"

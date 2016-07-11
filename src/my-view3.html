@@ -47,18 +47,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <div class="card">
       <h1>My account</h1>
+      <p>
+        <button on-tap="button1"> button1 </button>
+      </p>
     </div>
 
   </template>
 
   <script>
-
     Polymer({
+      is: 'my-view3',
 
-      is: 'my-view3'
-
+      button1:function(){
+        console.log("testing");
+      }
     });
-
   </script>
 
 </dom-module>

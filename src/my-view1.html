@@ -1,4 +1,4 @@
-<!--
+!--
 @license
 Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
@@ -16,14 +16,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="my-view1">
 
   <template>
-    <template id="tds" is="dom-bind">
-      <firebase-collection
-        order-by-child="timestamp"
-        limit-to-last="15"
-        location="https://project-1570032092864356412.firebaseio.com/edgaralejod/tds"
-        data="{{tds}}">
-      </firebase-collection>
-    </template>
     <style>
       :host {
         display: block;
@@ -90,17 +82,38 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
              ["5",32.20],["6",32.22],["7",32.25],["8",32.14],["9",32.10]]'>
       </highcharts-chart>
     </div>
-    
+    <firebase-document
+    location="{{getLocation()}}"
+    data="{{profile}}"
+    log="true">
+    </firebase-document>
+    <div>{{outputFunc(profile)}}</div>
   </template>
 
   <script>
-
     Polymer({
+      is: 'my-view1',
 
-      is: 'my-view1'
+      properties:{
+        profile:{
+          type: Object,
+          value: {}
+        }
+      },
 
+      getLocation:function(){
+        console.log("retrieveWhere");
+        return "https://project-1570032092864356412.firebaseio.com/edgaralejod/tds";
+      },
+
+      outputFunc:function(profile){
+        return JSON.stringify(profile);
+      },
+
+      dataReceived:function(){
+        console.log("newData!!!");
+      }
     });
-
   </script>
 
 </dom-module>
